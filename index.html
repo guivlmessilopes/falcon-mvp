@@ -413,9 +413,9 @@ function directions(id) {
 }
 
 function routeUrl(place) {
-  const origin = latLngLiteral(currentDestination.location);
+  // Sem origem fixa: o Google Maps utiliza a localização atual do dispositivo, quando disponível.
   const destination = latLngLiteral(place.location);
-  return `https://www.google.com/maps/dir/?api=1&origin=${origin.lat},${origin.lng}&destination=${destination.lat},${destination.lng}&travelmode=driving`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${destination.lat},${destination.lng}&travelmode=driving&dir_action=navigate`;
 }
 
 function toggleFav(id, button) {
